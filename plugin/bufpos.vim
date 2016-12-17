@@ -22,7 +22,9 @@ function! BufPos_ActivateBuffer(num)
             let l:count = l:count + 1
         endif
     endfor
-    echo "No buffer!"
+    " if we pick one that's beyond the end, we probably 
+    " meant the last one so activate that instead
+    exe "buffer " . i
 endfunction
 
 function! BufPos_Initialize()
